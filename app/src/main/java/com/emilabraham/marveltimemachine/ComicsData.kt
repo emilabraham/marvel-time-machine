@@ -1,7 +1,7 @@
 package com.emilabraham.marveltimemachine
 
 /**
- * Created by eabraham on 1/27/18.
+ * The data attribute from MarvelApiResponse. Contains the list of comics.
  */
 
 class ComicsData(val limit: Int, val total: Int, val count: Int, val results: List<Comic>)

@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 /**
- * Created by eabraham on 1/13/18.
+ * Calls to the Marvel API.
  */
 interface MarvelApi {
     @GET("https://gateway.marvel.com:443/v1/public/comics")
