@@ -1,0 +1,609 @@
+{
+  "code": 200,
+  "status": "Ok",
+  "copyright": "© 2018 MARVEL",
+  "attributionText": "Data provided by Marvel. © 2018 MARVEL",
+  "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2018 MARVEL</a>",
+  "etag": "6151685dc4a1b25008e94a6ef8b71acf084f4ab6",
+  "data": {
+    "offset": 0,
+    "limit": 20,
+    "total": 4,
+    "count": 4,
+    "results": [
+      {
+        "id": 64691,
+        "digitalId": 47535,
+        "title": "Black Panther: Soul of a Machine – Chapter Six (2018)",
+        "issueNumber": 0,
+        "variantDescription": "",
+        "description": "Bold Style: Machinesmith has infected all the tech in Birnin Bashenga. Can Black Panther, the Wakandan scientists and the Takumi Masters manage to scramble Machinesmith’s control of the machines before it’s too late?",
+        "modified": "2018-01-12T08:27:14-0500",
+        "isbn": "",
+        "upc": "75960605301808707",
+        "diamondCode": "",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 10,
+        "textObjects": [
+          {
+            "type": "issue_solicit_text",
+            "language": "en-us",
+            "text": "Bold Style: Machinesmith has infected all the tech in Birnin Bashenga. Can Black Panther, the Wakandan scientists and the Takumi Masters manage to scramble Machinesmith’s control of the machines before it’s too late?"
+          }
+        ],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/64691",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/64691/black_panther_soul_of_a_machine_chapter_six_2018?utm_campaign=apiRef&utm_source=70983eedc7d37af9a72b4da32798ccf0"
+          },
+          {
+            "type": "reader",
+            "url": "http://marvel.com/digitalcomics/view.htm?iid=47535&utm_campaign=apiRef&utm_source=70983eedc7d37af9a72b4da32798ccf0"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/23567",
+          "name": "Black Panther: Soul of a Machine – Chapter Six (2018)"
+        },
+        "variants": [],
+        "collections": [],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "2018-01-12T00:00:00-0500"
+          },
+          {
+            "type": "focDate",
+            "date": "2017-12-13T00:00:00-0500"
+          },
+          {
+            "type": "unlimitedDate",
+            "date": "2018-01-12T08:00:00-0500"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 0
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/40/5a34584dcdc70",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/40/5a34584dcdc70",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 7,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64691/creators",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12847",
+              "name": "Chuck Brown",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12919",
+              "name": "Katherine Brown",
+              "role": "project manager"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/13096",
+              "name": "Jose L. Giles",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/1082",
+              "name": "Ariel Olivetti",
+              "role": "inker (cover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+              "name": "Vc Joe Sabino",
+              "role": "letterer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12757",
+              "name": "Darren Sanchez",
+              "role": "editor"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/500",
+              "name": "Chris Sotomayor",
+              "role": "colorist"
+            }
+          ],
+          "returned": 7
+        },
+        "characters": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64691/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009187",
+              "name": "Black Panther"
+            }
+          ],
+          "returned": 1
+        },
+        "stories": {
+          "available": 2,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64691/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/140431",
+              "name": "cover from Custom Promo Lexus 2017 Black Panther GN Print Ready File (2017) #6",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/140432",
+              "name": "story from Custom Promo Lexus 2017 Black Panther GN Print Ready File (2017) #6",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 2
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64691/events",
+          "items": [],
+          "returned": 0
+        }
+      },
+      {
+        "id": 64693,
+        "digitalId": 47537,
+        "title": "Black Panther: Soul of a Machine – Chapter Eight (2018)",
+        "issueNumber": 0,
+        "variantDescription": "",
+        "description": "Bravery: The prototype vehicle is ready, and Black Panther must get behind the wheel in a race for the fate of Wakanda…and the world. But is the vehicle as smart and as fast as Machinesmith? The thrilling conclusion to the epic story, SOUL OF A MACHINE.",
+        "modified": "2018-01-12T08:27:14-0500",
+        "isbn": "",
+        "upc": "75960605301808709",
+        "diamondCode": "",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 10,
+        "textObjects": [
+          {
+            "type": "issue_solicit_text",
+            "language": "en-us",
+            "text": "Bravery: The prototype vehicle is ready, and Black Panther must get behind the wheel in a race for the fate of Wakanda…and the world. But is the vehicle as smart and as fast as Machinesmith? The thrilling conclusion to the epic story, SOUL OF A MACHINE."
+          }
+        ],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/64693",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/64693/black_panther_soul_of_a_machine_chapter_eight_2018?utm_campaign=apiRef&utm_source=70983eedc7d37af9a72b4da32798ccf0"
+          },
+          {
+            "type": "reader",
+            "url": "http://marvel.com/digitalcomics/view.htm?iid=47537&utm_campaign=apiRef&utm_source=70983eedc7d37af9a72b4da32798ccf0"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/23569",
+          "name": "Black Panther: Soul of a Machine – Chapter Eight (2018)"
+        },
+        "variants": [],
+        "collections": [],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "2018-01-12T00:00:00-0500"
+          },
+          {
+            "type": "focDate",
+            "date": "2017-12-13T00:00:00-0500"
+          },
+          {
+            "type": "unlimitedDate",
+            "date": "2018-01-12T08:00:00-0500"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 0
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/d0/5a37df9f17281",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/d0/5a37df9f17281",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 6,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64693/creators",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/6001",
+              "name": "Fabian Nicieza",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/1082",
+              "name": "Ariel Olivetti",
+              "role": "inker (cover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+              "name": "Vc Joe Sabino",
+              "role": "letterer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12757",
+              "name": "Darren Sanchez",
+              "role": "editor"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/500",
+              "name": "Chris Sotomayor",
+              "role": "colorist"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/474",
+              "name": "Andrea Di Vito",
+              "role": "inker"
+            }
+          ],
+          "returned": 6
+        },
+        "characters": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64693/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009187",
+              "name": "Black Panther"
+            }
+          ],
+          "returned": 1
+        },
+        "stories": {
+          "available": 2,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64693/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/140435",
+              "name": "cover from Custom Promo Lexus 2017 Black Panther GN Print Ready File (2017) #8",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/140436",
+              "name": "story from Custom Promo Lexus 2017 Black Panther GN Print Ready File (2017) #8",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 2
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64693/events",
+          "items": [],
+          "returned": 0
+        }
+      },
+      {
+        "id": 64690,
+        "digitalId": 47536,
+        "title": "Black Panther: Soul of a Machine – Chapter Five (2018)",
+        "issueNumber": 0,
+        "variantDescription": "",
+        "description": "Imaginative: The battle against Machinesmith is taken to the virtual world as the Takumi Master and Wakandan scientists attempt risky virtual attacks on the digital invader. But will the sacrifice be worth it?",
+        "modified": "2018-01-12T08:27:14-0500",
+        "isbn": "",
+        "upc": "75960605301808706",
+        "diamondCode": "",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 10,
+        "textObjects": [
+          {
+            "type": "issue_solicit_text",
+            "language": "en-us",
+            "text": "Imaginative: The battle against Machinesmith is taken to the virtual world as the Takumi Master and Wakandan scientists attempt risky virtual attacks on the digital invader. But will the sacrifice be worth it?"
+          }
+        ],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/64690",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/64690/black_panther_soul_of_a_machine_chapter_five_2018?utm_campaign=apiRef&utm_source=70983eedc7d37af9a72b4da32798ccf0"
+          },
+          {
+            "type": "reader",
+            "url": "http://marvel.com/digitalcomics/view.htm?iid=47536&utm_campaign=apiRef&utm_source=70983eedc7d37af9a72b4da32798ccf0"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/23566",
+          "name": "Black Panther: Soul of a Machine – Chapter Five (2018)"
+        },
+        "variants": [],
+        "collections": [],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "2018-01-12T00:00:00-0500"
+          },
+          {
+            "type": "focDate",
+            "date": "2017-12-13T00:00:00-0500"
+          },
+          {
+            "type": "unlimitedDate",
+            "date": "2018-01-12T08:00:00-0500"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 0
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/80/5a34585aa485e",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/80/5a34585aa485e",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 8,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64690/creators",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/13155",
+              "name": "Mike Bowden",
+              "role": "penciler"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12919",
+              "name": "Katherine Brown",
+              "role": "project manager"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/6001",
+              "name": "Fabian Nicieza",
+              "role": "writer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/1082",
+              "name": "Ariel Olivetti",
+              "role": "colorist (cover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12978",
+              "name": "Roberto Poggi",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+              "name": "Vc Joe Sabino",
+              "role": "letterer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12757",
+              "name": "Darren Sanchez",
+              "role": "editor"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/500",
+              "name": "Chris Sotomayor",
+              "role": "colorist"
+            }
+          ],
+          "returned": 8
+        },
+        "characters": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64690/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009187",
+              "name": "Black Panther"
+            }
+          ],
+          "returned": 1
+        },
+        "stories": {
+          "available": 2,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64690/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/140429",
+              "name": "cover from Custom Promo Lexus 2017 Black Panther GN Print Ready File (2017) #5",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/140430",
+              "name": "story from Custom Promo Lexus 2017 Black Panther GN Print Ready File (2017) #5",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 2
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64690/events",
+          "items": [],
+          "returned": 0
+        }
+      },
+      {
+        "id": 64692,
+        "digitalId": 47534,
+        "title": "Black Panther: Soul of a Machine – Chapter Seven (2018)",
+        "issueNumber": 0,
+        "variantDescription": "",
+        "description": "Exhilarating Performance: Machinesmith has taken control of all mechanical systems of Wakanda and is determined to next take over the entire planet. Will the resistance forces of Wakanda have time to deploy the prototype?",
+        "modified": "2018-01-12T08:27:14-0500",
+        "isbn": "",
+        "upc": "75960605301808708",
+        "diamondCode": "",
+        "ean": "",
+        "issn": "",
+        "format": "Comic",
+        "pageCount": 10,
+        "textObjects": [
+          {
+            "type": "issue_solicit_text",
+            "language": "en-us",
+            "text": "Exhilarating Performance: Machinesmith has taken control of all mechanical systems of Wakanda and is determined to next take over the entire planet. Will the resistance forces of Wakanda have time to deploy the prototype?"
+          }
+        ],
+        "resourceURI": "http://gateway.marvel.com/v1/public/comics/64692",
+        "urls": [
+          {
+            "type": "detail",
+            "url": "http://marvel.com/comics/issue/64692/black_panther_soul_of_a_machine_chapter_seven_2018?utm_campaign=apiRef&utm_source=70983eedc7d37af9a72b4da32798ccf0"
+          },
+          {
+            "type": "reader",
+            "url": "http://marvel.com/digitalcomics/view.htm?iid=47534&utm_campaign=apiRef&utm_source=70983eedc7d37af9a72b4da32798ccf0"
+          }
+        ],
+        "series": {
+          "resourceURI": "http://gateway.marvel.com/v1/public/series/23568",
+          "name": "Black Panther: Soul of a Machine – Chapter Seven (2018)"
+        },
+        "variants": [],
+        "collections": [],
+        "collectedIssues": [],
+        "dates": [
+          {
+            "type": "onsaleDate",
+            "date": "2018-01-12T00:00:00-0500"
+          },
+          {
+            "type": "focDate",
+            "date": "2017-12-13T00:00:00-0500"
+          },
+          {
+            "type": "unlimitedDate",
+            "date": "2018-01-12T08:00:00-0500"
+          }
+        ],
+        "prices": [
+          {
+            "type": "printPrice",
+            "price": 0
+          }
+        ],
+        "thumbnail": {
+          "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/90/5a3458204a8f9",
+          "extension": "jpg"
+        },
+        "images": [
+          {
+            "path": "http://i.annihil.us/u/prod/marvel/i/mg/3/90/5a3458204a8f9",
+            "extension": "jpg"
+          }
+        ],
+        "creators": {
+          "available": 8,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64692/creators",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12919",
+              "name": "Katherine Brown",
+              "role": "project manager"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/745",
+              "name": "Yvel Guichet",
+              "role": "penciler"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/1082",
+              "name": "Ariel Olivetti",
+              "role": "inker (cover)"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12978",
+              "name": "Roberto Poggi",
+              "role": "inker"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12974",
+              "name": "Vc Joe Sabino",
+              "role": "letterer"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12757",
+              "name": "Darren Sanchez",
+              "role": "editor"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/500",
+              "name": "Chris Sotomayor",
+              "role": "colorist"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/creators/12886",
+              "name": "Geoffrey Thorne",
+              "role": "writer"
+            }
+          ],
+          "returned": 8
+        },
+        "characters": {
+          "available": 1,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64692/characters",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009187",
+              "name": "Black Panther"
+            }
+          ],
+          "returned": 1
+        },
+        "stories": {
+          "available": 2,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64692/stories",
+          "items": [
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/140433",
+              "name": "cover from Custom Promo Lexus 2017 Black Panther GN Print Ready File (2017) #7",
+              "type": "cover"
+            },
+            {
+              "resourceURI": "http://gateway.marvel.com/v1/public/stories/140434",
+              "name": "story from Custom Promo Lexus 2017 Black Panther GN Print Ready File (2017) #7",
+              "type": "interiorStory"
+            }
+          ],
+          "returned": 2
+        },
+        "events": {
+          "available": 0,
+          "collectionURI": "http://gateway.marvel.com/v1/public/comics/64692/events",
+          "items": [],
+          "returned": 0
+        }
+      }
+    ]
+  }
+}
