@@ -30,3 +30,6 @@ promising. At first, I thought a full database would be heavy handed, since it's
 like a cache. But whatever.
 
 If they provide me a JPA like interface to interact with the DB, why use the DB directly?
+
+Ding ding ding, I guess we have a winner. I'll stick with Room for now. This app is small enough
+that I can change it easy enough.
