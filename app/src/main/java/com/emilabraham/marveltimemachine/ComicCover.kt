@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import kotlinx.android.synthetic.main.activity_comic_cover.*
+import org.joda.time.DateTime
+import org.joda.time.format.DateTimeFormat
+import org.joda.time.format.DateTimeFormatter
 import retrofit2.Response
 import java.util.logging.Logger
 
@@ -45,6 +48,7 @@ class ComicCover : AppCompatActivity() {
      */
     private val mDelayHideTouchListener = View.OnTouchListener { _, _ ->
         ComicBackgroundCall().execute()
+        log.info("I pushed the button. Just above, I made the background call.")
         if (AUTO_HIDE) {
             delayedHide(AUTO_HIDE_DELAY_MILLIS)
         }
@@ -54,9 +58,10 @@ class ComicCover : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        log.warning("Hello World!!!!!!")
+        log.info("Hello World!!!!!!")
 
         ComicBackgroundCall().execute()
+        ComicBackgroundCall().execute("my param")
 
         setContentView(R.layout.activity_comic_cover)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -143,19 +148,66 @@ class ComicCover : AppCompatActivity() {
 
     inner class ComicBackgroundCall: AsyncTask<String, String, Response<MarvelApiResponse>>() {
         override fun doInBackground(vararg p0: String?): Response<MarvelApiResponse> {
-            val callResponse = api.getComic("2018-1-12,2018-1-13")
+            log.info("I should be in here.")
+            var today = DateTime()
+            var callResponse = api.getComic("2018-1-12,2018-1-13")
             //response.body() Is automatically type MarvelApiResponse
-            val response = callResponse.execute()
-            log.info(response.code().toString())
+            var response = callResponse.execute()
+            //List of all the dateRanges to beginning of time
+            createDateArray(today).forEach {iterDate -> log.info(iterDate)}
 
-            if (response.isSuccessful) {
-                log.info(response.body()?.data?.results?.size.toString())
-                val myComics = response.body()?.data?.results?.forEach {comic -> log.info(comic.title) }
-            }
-            else {
-                log.info("Shit. It failed")
-            }
+//            if (response.isSuccessful) {
+//                log.info(response.body()?.data?.results?.size.toString())
+//                val myComics = response.body()?.data?.results?.forEach {comic -> log.info(comic.title) }
+//            }
+//            else {
+//                log.info("Shit. It failed")
+//            }
+
+            //Loop through dates until you get an empty date or if a call fails.
+            //This will be problematic if there are gap years, where no comic was published.
+            //Also will be problematic without any retry logic.
+//            while (!beginningOfTime) {
+//                callResponse = api.getComic(getDateRange(date))
+//                response = callResponse.execute()
+//                if (!response.isSuccessful || response.body()?.data?.results?.size ==0) {
+//                    beginningOfTime = true
+//                }
+//                else {
+//                    log.info(response.body()?.data?.results?.size.toString())
+//                    val myComics = response.body()?.data?.results?.forEach {comic -> log.info(comic.title) }
+//                }
+//            }
             return response
+        }
+
+        //Return the date range for the given year
+        fun getDateRange(today: DateTime): String {
+            var dateRangeString: DateTimeFormatter = DateTimeFormat.forPattern("yyyy-MM-dd")
+            var yesterday = today.minusDays(1)
+
+            var dateRange = dateRangeString.print(yesterday) + "," + dateRangeString.print(today)
+
+            return  dateRange
+        }
+
+        //Create dateRange array from given date until first ever published comic
+        fun createDateArray(today: DateTime): List<String> {
+            var firstComicDate = DateTime(1939,10,1,0,0)
+            var currentDate = today
+            var dates: MutableList<String> = mutableListOf<String>()
+            dates.add(getDateRange(currentDate))
+
+            while (currentDate.isAfter(firstComicDate)) {
+                currentDate = currentDate.minusYears(1)
+                //For that last date
+                if (currentDate.isAfter(firstComicDate)) {
+                    dates.add(getDateRange(currentDate))
+                }
+            }
+
+
+            return dates
         }
     }
 }

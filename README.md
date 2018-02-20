@@ -9,4 +9,5 @@ See what comics Marvel published today through past decades.
 - [ ] Handle images
 - [ ] Handle swiping left and right to cycle through comics for the selected year
 - [ ] Handle swiping up and down to cycle through the years.
+- [ ] Store API key in non-public way
 - [ ] Publish the app
