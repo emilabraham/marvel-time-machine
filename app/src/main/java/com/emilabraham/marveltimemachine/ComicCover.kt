@@ -153,31 +153,19 @@ class ComicCover : AppCompatActivity() {
             var callResponse = api.getComic("2018-1-12,2018-1-13")
             //response.body() Is automatically type MarvelApiResponse
             var response = callResponse.execute()
-            //List of all the dateRanges to beginning of time
-            createDateArray(today).forEach {iterDate -> log.info(iterDate)}
+            //Make comic calls to beginningOfTime
+            createDateArray(today).forEach { iterDate ->
+                log.info(iterDate)
+                callResponse = api.getComic(iterDate)
+                response = callResponse.execute()
+                if (response.isSuccessful) {
+                    log.info(response.body()?.data?.results?.size.toString())
+                    val myComics = response.body()?.data?.results?.forEach { comic -> log.info(comic.title) }
+                } else {
+                    log.info("Shit. The call failed")
+                }
+            }
 
-//            if (response.isSuccessful) {
-//                log.info(response.body()?.data?.results?.size.toString())
-//                val myComics = response.body()?.data?.results?.forEach {comic -> log.info(comic.title) }
-//            }
-//            else {
-//                log.info("Shit. It failed")
-//            }
-
-            //Loop through dates until you get an empty date or if a call fails.
-            //This will be problematic if there are gap years, where no comic was published.
-            //Also will be problematic without any retry logic.
-//            while (!beginningOfTime) {
-//                callResponse = api.getComic(getDateRange(date))
-//                response = callResponse.execute()
-//                if (!response.isSuccessful || response.body()?.data?.results?.size ==0) {
-//                    beginningOfTime = true
-//                }
-//                else {
-//                    log.info(response.body()?.data?.results?.size.toString())
-//                    val myComics = response.body()?.data?.results?.forEach {comic -> log.info(comic.title) }
-//                }
-//            }
             return response
         }
 
