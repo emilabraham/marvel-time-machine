@@ -20,6 +20,7 @@ class ComicCover : AppCompatActivity() {
     private val log = Logger.getLogger(ComicCover::class.java.name)
     private val api: RestApi = RestApi()
     private val mHideHandler = Handler()
+    private var timeline: MutableMap<String, MutableList<Comic>> = mutableMapOf<String, MutableList<Comic>>()
     private val mHidePart2Runnable = Runnable {
         // Delayed removal of status and navigation bar
 
@@ -28,11 +29,11 @@ class ComicCover : AppCompatActivity() {
         // at compile-time and do nothing on earlier devices.
         fullscreen_content.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LOW_PROFILE or
-                        View.SYSTEM_UI_FLAG_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
-                        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-                        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                View.SYSTEM_UI_FLAG_FULLSCREEN or
+                View.SYSTEM_UI_FLAG_LAYOUT_STABLE or
+                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
+                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
+                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
     }
     private val mShowPart2Runnable = Runnable {
         // Delayed display of UI elements
@@ -47,8 +48,7 @@ class ComicCover : AppCompatActivity() {
      * while interacting with activity UI.
      */
     private val mDelayHideTouchListener = View.OnTouchListener { _, _ ->
-        ComicBackgroundCall().execute()
-        log.info("I pushed the button. Just above, I made the background call.")
+        loopThroughYears()
         if (AUTO_HIDE) {
             delayedHide(AUTO_HIDE_DELAY_MILLIS)
         }
@@ -59,9 +59,6 @@ class ComicCover : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         log.info("Hello World!!!!!!")
-
-        ComicBackgroundCall().execute()
-        ComicBackgroundCall().execute("my param")
 
         setContentView(R.layout.activity_comic_cover)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -84,6 +81,44 @@ class ComicCover : AppCompatActivity() {
         // created, to briefly hint to the user that UI controls
         // are available.
         delayedHide(100)
+    }
+
+    //Return the date range for the given year
+    fun getDateRange(today: DateTime): String {
+        var dateRangeString: DateTimeFormatter = DateTimeFormat.forPattern("yyyy-MM-dd")
+        var yesterday = today.minusDays(1)
+
+        var dateRange = dateRangeString.print(yesterday) + "," + dateRangeString.print(today)
+
+        return dateRange
+    }
+
+    //Create dateRange array from given date until first ever published comic
+    fun createDateArray(today: DateTime): List<String> {
+        var firstComicDate = DateTime(1939, 10, 1, 0, 0)
+        var currentDate = today
+        var dates: MutableList<String> = mutableListOf<String>()
+        dates.add(getDateRange(currentDate))
+
+        while (currentDate.isAfter(firstComicDate)) {
+            currentDate = currentDate.minusYears(1)
+            //For that last date
+            if (currentDate.isAfter(firstComicDate)) {
+                dates.add(getDateRange(currentDate))
+            }
+        }
+
+
+        return dates
+    }
+
+    //Loop through the years and make the calls to api
+    //Should update timeline
+    private fun loopThroughYears() {
+        var today = DateTime()
+        createDateArray(today).forEach { iterDate ->
+            ComicBackgroundCall().execute(iterDate)
+        }
     }
 
     private fun toggle() {
@@ -109,7 +144,7 @@ class ComicCover : AppCompatActivity() {
         // Show the system bar
         fullscreen_content.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
         mVisible = true
 
         // Schedule a runnable to display UI elements after a delay
@@ -146,27 +181,38 @@ class ComicCover : AppCompatActivity() {
         private val UI_ANIMATION_DELAY = 300
     }
 
-    inner class ComicBackgroundCall: AsyncTask<String, String, Response<MarvelApiResponse>>() {
-        override fun doInBackground(vararg p0: String?): Response<MarvelApiResponse> {
-            log.info("I should be in here.")
-            var today = DateTime()
-            var callResponse = api.getComic("2018-1-12,2018-1-13")
+    inner class ComicBackgroundCall : AsyncTask<String, String, Response<MarvelApiResponse>>() {
+        override fun doInBackground(vararg p0: String): Response<MarvelApiResponse> {
+            //TODO: Move the loop to outside the call and only pass in a single dateRange.
+            var callResponse = api.getComic(p0[0])
             //response.body() Is automatically type MarvelApiResponse
             var response = callResponse.execute()
-            //Make comic calls to beginningOfTime
-            createDateArray(today).forEach { iterDate ->
-                log.info(iterDate)
-                callResponse = api.getComic(iterDate)
-                response = callResponse.execute()
-                if (response.isSuccessful) {
-                    log.info(response.body()?.data?.results?.size.toString())
-                    val myComics = response.body()?.data?.results?.forEach { comic -> log.info(comic.title) }
-                } else {
-                    log.info("Shit. The call failed")
-                }
-            }
 
+            log.info("Getting comics for the year: " + p0[0])
             return response
+        }
+
+        override fun onPostExecute(result: Response<MarvelApiResponse>) {
+            //TODO: Create/update the map and views and shit here.
+            var comicsInAYear = result.body()!!.data.results.size
+            if (result.isSuccessful && comicsInAYear > 0) {
+                log.info("Number of comics this year: " + result.body()?.data?.results?.size.toString())
+                val myComics = result.body()?.data?.results?.forEach { comic ->
+                    log.info(comic.title)
+
+                    //Update the map
+                    if (timeline.containsKey(getDateRange(comic.getSaleDate()))) { //TODO: Include the date in Comic
+                        timeline.get(getDateRange(comic.getSaleDate()))!!.add(comic)
+                    } else {
+                        var newComicList: MutableList<Comic> = mutableListOf<Comic>()
+                        newComicList.add(comic)
+                        timeline.put(getDateRange(comic.getSaleDate()), newComicList)
+                    }
+                }
+
+            } else {
+                log.info("No comics for this year")
+            }
         }
 
         //Return the date range for the given year
@@ -176,12 +222,12 @@ class ComicCover : AppCompatActivity() {
 
             var dateRange = dateRangeString.print(yesterday) + "," + dateRangeString.print(today)
 
-            return  dateRange
+            return dateRange
         }
 
         //Create dateRange array from given date until first ever published comic
         fun createDateArray(today: DateTime): List<String> {
-            var firstComicDate = DateTime(1939,10,1,0,0)
+            var firstComicDate = DateTime(1939, 10, 1, 0, 0)
             var currentDate = today
             var dates: MutableList<String> = mutableListOf<String>()
             dates.add(getDateRange(currentDate))
