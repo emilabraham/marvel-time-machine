@@ -3,7 +3,7 @@
 See what comics Marvel published today through past decades.
 
 ### TODO
-- [ ] Make n http calls where n is current year - year Marvel published its first comic
+- [x] Make n http calls where n is current year - year Marvel published its first comic
 - [ ] Store the data
 - [ ] Remove the data for the previous day if it exists
 - [ ] Handle images
